@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Manager</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 32px;
+            margin-top: 32px;
+        }
+        .event-card {
+            max-width: 430px;
+            width: 430px;
+            margin-bottom: 30px;
+        }
+        .faq-section {
+            max-width: 750px;
+            width: 90vw;
+        }
+        .tab-custom {
+            margin-bottom: 16px;
+        }
+        @media (max-width: 900px) {
+            .main-content { margin-left: 0; margin-top: 14px; }
+            .event-card { max-width: 100%; width: 100%; }
+            .faq-section { max-width: 100%; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Event Manager</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <!-- Tabs below navbar, above card -->
+        <ul class="nav nav-tabs tab-custom" id="eventTabs">
+            <li class="nav-item">
+                <a class="nav-link active" id="confTab" data-bs-toggle="tab" href="#conferences">Conferences</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="workshopTab" data-bs-toggle="tab" href="#workshops">Workshops</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="webinarTab" data-bs-toggle="tab" href="#webinars">Webinars</a>
+            </li>
+        </ul>
+        <div class="tab-content w-100">
+            <!-- Conferences Section -->
+            <div class="tab-pane fade show active" id="conferences">
+                <div class="event-card">
+                    <h4 class="card-title">AI in 2025</h4>
+                    <p class="card-text">Explore the future of AI and machine learning trends.</p>
+                    <p class="card-text"><strong>Date:</strong> May 10, 2025</p>
+                    <button class="btn btn-primary" id="registerBtnConf" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                </div>
+                <div class="faq-section">
+                    <h5 style="font-size:1.6rem;font-weight:700;margin-bottom:18px;">Frequently Asked Questions</h5>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeadingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
+                                    How do I get my ticket?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    After registration, your ticket will be emailed to you within 24 hours.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeadingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                    Can I cancel my registration?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Please contact support to cancel your registration.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Workshops Section -->
+            <div class="tab-pane fade" id="workshops">
+                <div class="event-card">
+                    <h4 class="card-title">ML Workshop</h4>
+                    <p class="card-text">Hands-on workshop on machine learning basics.</p>
+                    <p class="card-text"><strong>Date:</strong> June 10, 2025</p>
+                    <button class="btn btn-primary" id="registerBtnWorkshop" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                </div>
+                <div class="faq-section">
+                    <h5>Frequently Asked Questions</h5>
+                    <div class="accordion" id="faqAccordionWorkshop">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeadingWorkshopOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseWorkshopOne" aria-expanded="false" aria-controls="faqCollapseWorkshopOne">
+                                    How do I join the workshop?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseWorkshopOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingWorkshopOne" data-bs-parent="#faqAccordionWorkshop">
+                                <div class="accordion-body">
+                                    A link will be sent to your email after registration.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeadingWorkshopTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseWorkshopTwo" aria-expanded="false" aria-controls="faqCollapseWorkshopTwo">
+                                    Is prior experience required?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseWorkshopTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingWorkshopTwo" data-bs-parent="#faqAccordionWorkshop">
+                                <div class="accordion-body">
+                                    No, this workshop is beginner-friendly.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Webinars Section -->
+            <div class="tab-pane fade" id="webinars">
+                <div class="event-card">
+                    <h4 class="card-title">Future of Webinars</h4>
+                    <p class="card-text">Join our experts to discuss the future of online events.</p>
+                    <p class="card-text"><strong>Date:</strong> July 5, 2025</p>
+                    <button class="btn btn-primary" id="registerBtnWebinar" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+                </div>
+                <div class="faq-section">
+                    <h5>Frequently Asked Questions</h5>
+                    <div class="accordion" id="faqAccordionWebinar">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeadingWebinarOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseWebinarOne" aria-expanded="false" aria-controls="faqCollapseWebinarOne">
+                                    How do I attend?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseWebinarOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingWebinarOne" data-bs-parent="#faqAccordionWebinar">
+                                <div class="accordion-body">
+                                    You will receive a webinar link after registration.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeadingWebinarTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseWebinarTwo" aria-expanded="false" aria-controls="faqCollapseWebinarTwo">
+                                    Is it free?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseWebinarTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingWebinarTwo" data-bs-parent="#faqAccordionWebinar">
+                                <div class="accordion-body">
+                                    Yes, this webinar is free for all registered users.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Register for Event</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="registrationForm">
+              <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="fullName" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="eventType" class="form-label">Event Type</label>
+                <select class="form-select" id="eventType" required>
+                  <option value="">Select an event</option>
+                  <option value="Conference">Conference</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Webinar">Webinar</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary float-end">Submit Registration</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
